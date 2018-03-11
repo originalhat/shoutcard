@@ -5,11 +5,10 @@ module.exports = {
     bundle: "./src/index.tsx",
     vendor: ["react", "react-dom"]
   },
+
   output: {
     filename: "./dist/bundle.js",
   },
-
-  // devtool: "source-map",
 
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".json"]
@@ -19,7 +18,8 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: "awesome-typescript-loader"
+        loader: "ts-loader",
+        exclude: /node_modules/
       },
 
       {
@@ -46,6 +46,7 @@ module.exports = {
       }
     ]
   },
+
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',

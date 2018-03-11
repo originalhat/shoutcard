@@ -3,7 +3,7 @@ import {incrementCounter, decrementCounter, updateName} from '../actions/AppActi
 
 describe('AppReducers', () => {
   test('returns the initial state', () => {
-    expect(rootReducer(undefined, {})).toEqual({"name": "", "counter": 0})
+    expect(rootReducer(undefined, {} as any)).toEqual({"name": "", "counter": 0})
   });
 
   test('returns the next state for incrementCounter', () => {
