@@ -46,12 +46,5 @@ module.exports = {
         ]
       }
     ]
-  },
-
-  // plugins: [
-  //   new webpack.optimize.CommonsChunkPlugin({
-  //     name: 'vendor',
-  //     filename: './dist/vendor.bundle.js',
-  //   })
-  // ],
+  }
 };
