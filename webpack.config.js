@@ -3,11 +3,12 @@ const webpack = require('webpack');
 module.exports = {
   entry: {
     bundle: "./src/index.tsx",
+    // FIXME: not properly splitting bundles up (cf. splitChunks optimization)
     vendor: ["react", "react-dom"]
   },
 
   output: {
-    filename: "./dist/bundle.js",
+    filename: "./dist/[name].js",
   },
 
   resolve: {
@@ -47,10 +48,10 @@ module.exports = {
     ]
   },
 
-  plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      filename: './dist/vendor.bundle.js',
-    })
-  ],
+  // plugins: [
+  //   new webpack.optimize.CommonsChunkPlugin({
+  //     name: 'vendor',
+  //     filename: './dist/vendor.bundle.js',
+  //   })
+  // ],
 };
